@@ -1,0 +1,20 @@
+{% extends "default-layout.html" %} {% block content %}
+
+
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b5dc0aba56ca883b1a9328a148b3823f&libraries=LIBRARY"></script>
+<script src="{{url_for('static', filename = 'map/kakaoMap.js')}}"></script>
+
+
+
+
+<div id="map" class="map"></div>
+<script>
+    map = null;
+    $(document).ready(function() {
+        map = nMap.init("map");
+    });
+</script>
+
+
+{% endblock %}
