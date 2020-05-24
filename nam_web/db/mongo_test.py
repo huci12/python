@@ -31,7 +31,11 @@ col = db.members
 
 #results = col.find({"학교":"놀자대" , "나이" :30})
 
-results = col.find({"$or" : [{"이름":"홍길동"} , {"거주지" : "서울"} , {"학교" : "놀자대"}]})
+#results = col.find({"$or" : [{"이름":"홍길동"} , {"거주지" : "서울"} , {"학교" : "놀자대"}]})
+# $gt $gte
+
+results = col.find({"나이":{"&gt":50 , "&lt" :61}} , {"_id" : False , "이름" : True , "거주지" : True}).skip(1).limit(3)
+
 
 print(results)
 
